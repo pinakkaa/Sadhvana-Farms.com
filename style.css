@@ -27,6 +27,17 @@ body {
   line-height: 1.3;
   color: #103c3b;
   width: 100%;
+  text-transform: uppercase;
+  text-align: center !important;
+}
+.section-title-white {
+  font-family: "Gilda Display", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #fff;
+  width: 100%;
+  text-transform: uppercase;
   text-align: center !important;
 }
 .sectionsub-title {
@@ -132,18 +143,24 @@ body {
   align-items: center;
   text-align: center;
   gap: 4px;
-  padding: 10px 43px;
+  padding: 10px 13px;
   background-color: #103c3b;
   border: 1px solid #eeeeee;
+  width: 130px;
+  height: 90px;
 }
 .about-points h3 {
   font-family: "Gilda Display", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 18px !important;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 14.95px;
+  line-height: 18px;
   color: #ffffff;
+}
+.text-size-small{
+  font-size: 0.8rem !important;
+  line-height: 15px !important;
 }
 .about-points p {
   font-family: "Gilda Display", serif;
@@ -754,7 +771,7 @@ h2.project-title {
 =========================== */
 .outdoor-style-section {
   width: 100%;
-  /* background: #8c5325; */
+  background: #103C3B;
   padding: 0;
   overflow: hidden;
   padding: 40px 0;
@@ -781,7 +798,7 @@ h2.project-title {
 
 .outdoor-content h2 {
   margin-bottom: 5px;
-  color: #103c3b;
+  color: #fff;
   text-align: left !important;
 }
 
@@ -807,7 +824,7 @@ h2.project-title {
   padding-left: 18px;
   margin-bottom: 14px;
   font-size: 0.9rem;
-  color: #666666;
+  color: #fff;
   letter-spacing: 0.4px;
 }
 
@@ -816,7 +833,7 @@ h2.project-title {
   position: absolute;
   left: 0;
   top: 0;
-  color: #666666;
+  color: #fff;
   font-size: 1rem;
 }
 
@@ -978,7 +995,7 @@ h2.project-title {
 
   font-family: "Barlow", sans-serif;
   font-size: 18px;
-  color: #666666;
+  color: #fff;
   line-height: 1.5;
 }
 
@@ -992,7 +1009,7 @@ h2.project-title {
   height: 7px;
 
   border-radius: 50%;
-  background: #103c3b;
+  background: #fff;
 }
 @media (max-width: 768px) {
   .outdoor-list {
@@ -1703,7 +1720,7 @@ h2.project-title {
 =========================== */
 .location-advantages-section {
   width: 100%;
-  /* background: #f5ead9; */
+  background: #103C3B;
   padding: 50px 0;
   position: relative;
   overflow: hidden;
@@ -1730,7 +1747,7 @@ h2.project-title {
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 1.2;
-  color: #103c3b;
+  color: #fff;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-align: center !important;
@@ -1777,7 +1794,7 @@ h2.project-title {
   font-family: "Barlow", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: #103c3b;
+  color: #fff;
   /* margin-bottom: 22px; */
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(168, 106, 52, 0.25);
@@ -1809,7 +1826,7 @@ h2.project-title {
   font-family: "Barlow", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #103c3b;
+  color: #fff;
   line-height: 1.6;
 }
 
@@ -1988,7 +2005,7 @@ h2.project-title {
 }
 .masterplan-contetn-wrapper {
   width: 980px;
-  max-height: 550px;
+  height: 600px;
 }
 .masterplan-image {
   width: 100%;
@@ -2914,7 +2931,7 @@ h2.project-title {
 
 .sadhvana-why-section {
   padding: 60px 0;
-  background: #fff;
+  background: #103C3B;
 }
 
 .sadhvana-why-container {
@@ -2945,7 +2962,7 @@ h2.project-title {
   font-size: 28px;
   font-weight: 400;
   line-height: 1.3;
-  color: #103c3b;
+  color: #fff;
 }
 
 .sadhvana-why-grid {
@@ -3687,7 +3704,7 @@ h2.project-title {
 
 .masterplan {
   background: #fff;
-  padding: 40px 20px;
+  padding: 80px 20px 30px 20px;
   overflow: hidden;
 }
 
