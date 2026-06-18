@@ -620,6 +620,12 @@
                             Bengaluru–Mysore corridor.
                         </div>
                     </div>
+                    <div class="sadhvanaBrochureWrapper">
+                        <button id="openBrochurePopup" class="sadhvanaBrochureBtn">
+                            Download Brochure
+                        </button>
+                    </div>
+
                 </div>
 
                 <div class="sadhvanaInvestmentStats">
@@ -1472,7 +1478,138 @@
             </form>
         </div>
     </div>
+    <!-- Brochure Popup -->
+    <div class="sdvBrochureOverlay" id="sdvBrochureOverlay">
+        <div class="sdvBrochurePopup">
+
+            <button class="sdvClosePopup" id="sdvClosePopup">
+                &times;
+            </button>
+
+            <h3>Download Brochure</h3>
+
+            <form id="sdvBrochureForm">
+
+                <input type="text" id="brochure-name" placeholder="Full Name" required />
+
+                <div class="phone-groups">
+                    <select id="brochure-country-code">
+                        <option value="+91">🇮🇳 +91</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+44">🇬🇧 +44</option>
+                    </select>
+
+                    <input type="tel" id="brochure-mobile" placeholder="Mobile Number" required />
+                </div>
+
+                <input type="email" id="brochure-email" placeholder="Email Address" required />
+
+                <button type="submit" id="brochureSubmitBtn">
+                    Download Now
+                </button>
+
+                <p id="brochureSuccess" class="success-msg">
+                    Thank you! Your brochure is downloading...
+                </p>
+
+                <p id="brochureError" class="error-msg">
+                    Something went wrong. Please try again.
+                </p>
+
+            </form>
+
+        </div>
+    </div>
     <script src="./email.js"></script>
+    <script>
+        const brochurePopup = document.getElementById("sdvBrochureOverlay");
+
+        document
+            .getElementById("openBrochurePopup")
+            .addEventListener("click", () => {
+                brochurePopup.classList.add("active");
+            });
+
+        document
+            .getElementById("sdvClosePopup")
+            .addEventListener("click", () => {
+                brochurePopup.classList.remove("active");
+            });
+
+        brochurePopup.addEventListener("click", (e) => {
+            if (e.target === brochurePopup) {
+                brochurePopup.classList.remove("active");
+            }
+        });
+    </script>
+    <script>
+        document
+            .getElementById("sdvBrochureForm")
+            .addEventListener("submit", async function (e) {
+                e.preventDefault();
+
+                const submitBtn = document.getElementById("brochureSubmitBtn");
+                const successMsg = document.getElementById("brochureSuccess");
+                const errorMsg = document.getElementById("brochureError");
+
+                successMsg.style.display = "none";
+                errorMsg.style.display = "none";
+
+                const payload = {
+                    name: document.getElementById("brochure-name").value.trim(),
+                    country_code: document.getElementById("brochure-country-code").value,
+                    mobile: document.getElementById("brochure-mobile").value.trim(),
+                    email: document.getElementById("brochure-email").value.trim(),
+                };
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = "Submitting...";
+
+                try {
+                    const response = await fetch(
+                        "https://emailjsfuntions-428145106157.asia-south1.run.app/sadhvana-enquiry",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(payload),
+                        }
+                    );
+
+                    const result = await response.json();
+
+                    if (response.ok && result.success) {
+
+                        successMsg.style.display = "block";
+
+                        // DOWNLOAD BROCHURE
+                        const link = document.createElement("a");
+                        link.href = "./Sadhvana-brochure.pdf";
+                        link.download = "Sadhvana-brochure";
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+
+                        document.getElementById("sdvBrochureForm").reset();
+
+                        setTimeout(() => {
+                            brochurePopup.classList.remove("active");
+                        }, 2000);
+
+                    } else {
+                        errorMsg.style.display = "block";
+                    }
+
+                } catch (error) {
+                    console.error(error);
+                    errorMsg.style.display = "block";
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = "Download Now";
+                }
+            });
+    </script>
     <script>
 
         const sadhvanaNavbarEnquiryBtns =
