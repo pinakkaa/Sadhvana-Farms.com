@@ -621,7 +621,7 @@
                         </div>
                     </div>
                     <div class="sadhvanaBrochureWrapper">
-                        <button id="openBrochurePopup" class="sadhvanaBrochureBtn">
+                        <button class="sadhvanaBrochureBtn openBrochurePopup">
                             Download Brochure
                         </button>
                     </div>
@@ -809,82 +809,15 @@
                 </div>
 
             </div>
-        </section>
-        <!-- <section class="sports-area-section">
-                <div
-                    class="sports-area-container">
-                    <div class="sports-area-header">
-                        <h2>SPORTS AREA</h2>
-                        <p>
-                            Active Living, Elevated Designed for community engagement and wellness,
-                                                                                                          our Outdoor Sports Area
-                        </p>
-                    </div>
 
-                    <div
-                        class="sports-area-grid">
-
-                        <div class="sports-card">
-                            <div class="sports-card-top-labels">
-                                <span>CRICKET NETS</span>
-                                <span>TENNIS COURT</span>
-                            </div>
-
-                            <div class="sports-card-layout">
-                                <div class="sports-card-images sports-card-images-left">
-                                    <div class="sports-img sports-img-1">
-                                        <img src="./Images/cricket.png" alt="Cricket Nets">
-                                    </div>
-                                    <div class="sports-img sports-img-2">
-                                        <img src="./Images/tennis.png" alt="Tennis Court">
-                                    </div>
-                                    <div class="sports-img sports-img-3 sports-wide">
-                                        <img src="./Images/volleyball.png" alt="Volleyball Court">
-                                    </div>
-                                </div>
-
-                                <div class="sports-strap">
-                                    <span>OUTDOOR</span>
-                                </div>
-                            </div>
-
-                            <div class="sports-card-bottom-label">
-                                <span>VOLLEYBALL COURT</span>
-                            </div>
-                        </div>
-
-                        <div class="sports-card">
-                            <div class="sports-card-top-labels">
-                                <span>FOOSBALL</span>
-                                <span>TABLE TENNIS</span>
-                            </div>
-
-                            <div class="sports-card-layout">
-                                <div class="sports-card-images sports-card-images-right">
-                                    <div class="sports-img sports-img-4">
-                                        <img src="./Images/foosball.png" alt="Foosball">
-                                    </div>
-                                    <div class="sports-img sports-img-5">
-                                        <img src="./Images/table-tennis.png" alt="Table Tennis">
-                                    </div>
-                                    <div class="sports-img sports-img-6 sports-wide">
-                                        <img src="./Images/snooker.png" alt="Snooker">
-                                    </div>
-                                </div>
-
-                                <div class="sports-strap">
-                                    <span>INDOOR</span>
-                                </div>
-                            </div>
-
-                            <div class="sports-card-bottom-label">
-                                <span>SNOOKER</span>
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="btn-wrapper-div">
+                <div class="sadhvanaBrochureWrapper">
+                    <button class="sadhvanaBrochureBtn openBrochurePopup">
+                        Download Brochure
+                    </button>
                 </div>
-            </section> -->
+            </div>
+        </section>
 
         <section class="masterplan-section" id="masterplan">
             <div class="main-container">
@@ -1525,9 +1458,11 @@
         const brochurePopup = document.getElementById("sdvBrochureOverlay");
 
         document
-            .getElementById("openBrochurePopup")
-            .addEventListener("click", () => {
-                brochurePopup.classList.add("active");
+            .querySelectorAll(".openBrochurePopup")
+            .forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    brochurePopup.classList.add("active");
+                });
             });
 
         document

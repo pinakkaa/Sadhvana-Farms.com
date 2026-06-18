@@ -4131,3 +4131,11 @@ h2.project-title {
 .error-msg {
     color: red;
 }
+
+
+.btn-wrapper-div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
