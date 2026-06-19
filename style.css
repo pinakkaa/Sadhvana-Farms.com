@@ -2680,11 +2680,12 @@ h2.project-title {
   left: 0;
   width: 100%;
   z-index: 9999;
-  padding: 20px 40px;
+  /* padding: 20px 40px; */
 }
 
 .moggsEstateNavBar {
-  max-width: 1320px;
+  /* max-width: 1320px; */
+  width: 100%;
   margin: auto;
 
   display: flex;
@@ -2697,7 +2698,7 @@ h2.project-title {
 
   border: 1px solid rgba(140, 81, 32, 0.12);
 
-  border-radius: 18px;
+  /* border-radius: 18px; */
 
   padding: 14px 28px;
 
@@ -4032,12 +4033,20 @@ h2.project-title {
     font-weight: 600;
     border-radius: 4px;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .sadhvanaBrochureBtn:hover {
     background: #0d2f2e;
 }
-
+.color-light-green{
+  background-color: #43b749;
+  /* padding: 12px 20px; */
+  border-radius: 10px;
+}
+.color-light-green:hover{
+  background-color: #43b749c0;
+}
 .sdvBrochureOverlay {
     position: fixed;
     inset: 0;
